@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,6 +68,7 @@
                                     <outlet property="artistNameLabel" destination="5JK-Mx-sMJ" id="KRf-5G-Zm2"/>
                                     <outlet property="artworkImageView" destination="iEE-FO-Xfp" id="tOr-tl-ZJW"/>
                                     <outlet property="collectionNameLabel" destination="AlB-qq-MZD" id="gsd-wm-SLd"/>
+                                    <segue destination="Jop-gS-bJD" kind="show" identifier="Show Detail" id="Uqq-PZ-dot"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -98,6 +100,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYJ-m0-PCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52" y="27"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="j5B-ch-r00">
+            <objects>
+                <viewController id="Jop-gS-bJD" customClass="DetailViewController" customModule="iTiunes_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wXe-Li-BfS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQy-o0-jR2">
+                                <rect key="frame" x="0.0" y="116" width="375" height="375"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.19995241116751269" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wQy-o0-jR2" secondAttribute="height" id="XER-jp-2mq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnO-EH-8lQ">
+                                <rect key="frame" x="16" y="499" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT4-mb-WZf">
+                                <rect key="frame" x="16" y="528" width="134" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wQy-o0-jR2" firstAttribute="top" secondItem="NuH-Z8-Lzs" secondAttribute="top" id="16N-ts-17o"/>
+                            <constraint firstItem="RT4-mb-WZf" firstAttribute="top" secondItem="MnO-EH-8lQ" secondAttribute="bottom" constant="8" id="Exx-Jc-hct"/>
+                            <constraint firstItem="wQy-o0-jR2" firstAttribute="leading" secondItem="NuH-Z8-Lzs" secondAttribute="leading" id="P3W-Yz-JWh"/>
+                            <constraint firstItem="MnO-EH-8lQ" firstAttribute="leading" secondItem="NuH-Z8-Lzs" secondAttribute="leading" constant="16" id="UQn-ki-bZa"/>
+                            <constraint firstItem="MnO-EH-8lQ" firstAttribute="top" secondItem="wQy-o0-jR2" secondAttribute="bottom" constant="8" id="cY4-P2-Pbp"/>
+                            <constraint firstItem="wQy-o0-jR2" firstAttribute="trailing" secondItem="NuH-Z8-Lzs" secondAttribute="trailing" id="pmN-mO-Gek"/>
+                            <constraint firstItem="RT4-mb-WZf" firstAttribute="leading" secondItem="NuH-Z8-Lzs" secondAttribute="leading" constant="16" id="va3-cc-SBt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NuH-Z8-Lzs"/>
+                    </view>
+                    <connections>
+                        <outlet property="artistNameLabel" destination="MnO-EH-8lQ" id="4ox-dH-QdP"/>
+                        <outlet property="artworkImageView" destination="wQy-o0-jR2" id="4ea-VW-PAV"/>
+                        <outlet property="collectionNameLabel" destination="RT4-mb-WZf" id="sY7-1E-iOF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IOl-ed-sK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072.8000000000002" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

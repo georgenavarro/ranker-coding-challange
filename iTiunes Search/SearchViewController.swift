@@ -15,6 +15,19 @@ class SearchViewController: UITableViewController {
 }
 
 extension SearchViewController {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if
+			let cell: UITableViewCell = sender as? UITableViewCell,
+			let indexPath: IndexPath = self.tableView.indexPath(for: cell),
+			self.results.indices.contains(indexPath.row)
+		{
+			let detailViewController: DetailViewController? = segue.destination as? DetailViewController
+			detailViewController?.result = self.results[indexPath.row]
+		}
+	}
+}
+
+extension SearchViewController {
 	private static let cellReuseIdentifire = "ResultCell"
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
