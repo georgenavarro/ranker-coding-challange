@@ -13,7 +13,7 @@
         <scene sceneID="xmm-xb-vGr">
             <objects>
                 <tableViewController id="lhx-D3-Pwb" customClass="SearchViewController" customModule="iTiunes_Search" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="gnd-j9-Btn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="gnd-j9-Btn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -26,13 +26,48 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="wLe-oC-27j">
-                                <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="wLe-oC-27j" customClass="SearchResultsCell" customModule="iTiunes_Search" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="99.5" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wLe-oC-27j" id="qbJ-HY-WwR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iEE-FO-Xfp">
+                                            <rect key="frame" x="16" y="0.0" width="59.5" height="59.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.1958280456852792" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="iEE-FO-Xfp" secondAttribute="height" id="En0-nU-QCe"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JK-Mx-sMJ">
+                                            <rect key="frame" x="83.5" y="8.5" width="96" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlB-qq-MZD">
+                                            <rect key="frame" x="83.5" y="30" width="107" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5JK-Mx-sMJ" firstAttribute="leading" secondItem="iEE-FO-Xfp" secondAttribute="trailing" constant="8" id="4hX-KN-9fw"/>
+                                        <constraint firstAttribute="bottom" secondItem="iEE-FO-Xfp" secondAttribute="bottom" id="6sv-FP-H4M"/>
+                                        <constraint firstItem="iEE-FO-Xfp" firstAttribute="top" secondItem="qbJ-HY-WwR" secondAttribute="top" id="8tH-5l-oZ6"/>
+                                        <constraint firstItem="iEE-FO-Xfp" firstAttribute="leading" secondItem="qbJ-HY-WwR" secondAttribute="leading" constant="16" id="C9d-eT-TGq"/>
+                                        <constraint firstAttribute="centerY" secondItem="5JK-Mx-sMJ" secondAttribute="bottom" id="TDy-77-gih"/>
+                                        <constraint firstItem="AlB-qq-MZD" firstAttribute="top" secondItem="qbJ-HY-WwR" secondAttribute="centerY" id="Znc-w1-qzC"/>
+                                        <constraint firstItem="AlB-qq-MZD" firstAttribute="leading" secondItem="iEE-FO-Xfp" secondAttribute="trailing" constant="8" id="zVW-kj-rDL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="artistNameLabel" destination="5JK-Mx-sMJ" id="KRf-5G-Zm2"/>
+                                    <outlet property="artworkImageView" destination="iEE-FO-Xfp" id="tOr-tl-ZJW"/>
+                                    <outlet property="collectionNameLabel" destination="AlB-qq-MZD" id="gsd-wm-SLd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -46,7 +81,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHR-tl-DDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005" y="27"/>
+            <point key="canvasLocation" x="1004" y="26.53673163418291"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D51-pj-unj">

@@ -27,7 +27,20 @@ extension SearchViewController {
 			for: indexPath
 		)
 
-		return cell
+		guard let searchResultCell: SearchResultsCell = cell as? SearchResultsCell else {
+			return cell
+		}
+
+		var result: SearchResults.Result?
+
+		if self.results.indices.contains(indexPath.row) {
+			result = self.results[indexPath.row]
+		}
+
+		searchResultCell.artistNameLabel?.text = result?.artistName
+		searchResultCell.collectionNameLabel?.text = result?.collectionName
+
+		return searchResultCell
 	}
 }
 
