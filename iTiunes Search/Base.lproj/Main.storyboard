@@ -42,23 +42,25 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JK-Mx-sMJ">
-                                            <rect key="frame" x="83.5" y="8.5" width="96" height="21.5"/>
+                                            <rect key="frame" x="83.5" y="8.5" width="275.5" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlB-qq-MZD">
-                                            <rect key="frame" x="83.5" y="30" width="107" height="17"/>
+                                            <rect key="frame" x="83.5" y="30" width="259.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="AlB-qq-MZD" secondAttribute="trailing" constant="16" id="19K-Q5-H55"/>
                                         <constraint firstItem="5JK-Mx-sMJ" firstAttribute="leading" secondItem="iEE-FO-Xfp" secondAttribute="trailing" constant="8" id="4hX-KN-9fw"/>
                                         <constraint firstAttribute="bottom" secondItem="iEE-FO-Xfp" secondAttribute="bottom" id="6sv-FP-H4M"/>
                                         <constraint firstItem="iEE-FO-Xfp" firstAttribute="top" secondItem="qbJ-HY-WwR" secondAttribute="top" id="8tH-5l-oZ6"/>
                                         <constraint firstItem="iEE-FO-Xfp" firstAttribute="leading" secondItem="qbJ-HY-WwR" secondAttribute="leading" constant="16" id="C9d-eT-TGq"/>
+                                        <constraint firstAttribute="trailing" secondItem="5JK-Mx-sMJ" secondAttribute="trailing" constant="16" id="KYe-r7-REb"/>
                                         <constraint firstAttribute="centerY" secondItem="5JK-Mx-sMJ" secondAttribute="bottom" id="TDy-77-gih"/>
                                         <constraint firstItem="AlB-qq-MZD" firstAttribute="top" secondItem="qbJ-HY-WwR" secondAttribute="centerY" id="Znc-w1-qzC"/>
                                         <constraint firstItem="AlB-qq-MZD" firstAttribute="leading" secondItem="iEE-FO-Xfp" secondAttribute="trailing" constant="8" id="zVW-kj-rDL"/>
@@ -117,14 +119,26 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnO-EH-8lQ">
-                                <rect key="frame" x="16" y="499" width="96" height="21"/>
+                                <rect key="frame" x="16" y="499" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT4-mb-WZf">
-                                <rect key="frame" x="16" y="528" width="134" height="22"/>
+                                <rect key="frame" x="16" y="528" width="343" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiQ-c2-uq7">
+                                <rect key="frame" x="16" y="558" width="343" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71o-8W-nth">
+                                <rect key="frame" x="16" y="588" width="343" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -132,12 +146,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wQy-o0-jR2" firstAttribute="top" secondItem="NuH-Z8-Lzs" secondAttribute="top" id="16N-ts-17o"/>
+                            <constraint firstItem="71o-8W-nth" firstAttribute="top" secondItem="iiQ-c2-uq7" secondAttribute="bottom" constant="8" id="4Gn-6g-U3Y"/>
                             <constraint firstItem="RT4-mb-WZf" firstAttribute="top" secondItem="MnO-EH-8lQ" secondAttribute="bottom" constant="8" id="Exx-Jc-hct"/>
                             <constraint firstItem="wQy-o0-jR2" firstAttribute="leading" secondItem="NuH-Z8-Lzs" secondAttribute="leading" id="P3W-Yz-JWh"/>
                             <constraint firstItem="MnO-EH-8lQ" firstAttribute="leading" secondItem="NuH-Z8-Lzs" secondAttribute="leading" constant="16" id="UQn-ki-bZa"/>
+                            <constraint firstItem="NuH-Z8-Lzs" firstAttribute="trailing" secondItem="iiQ-c2-uq7" secondAttribute="trailing" constant="16" id="ZPs-YA-3v7"/>
+                            <constraint firstItem="NuH-Z8-Lzs" firstAttribute="trailing" secondItem="RT4-mb-WZf" secondAttribute="trailing" constant="16" id="bPQ-rE-WvA"/>
                             <constraint firstItem="MnO-EH-8lQ" firstAttribute="top" secondItem="wQy-o0-jR2" secondAttribute="bottom" constant="8" id="cY4-P2-Pbp"/>
+                            <constraint firstItem="71o-8W-nth" firstAttribute="leading" secondItem="NuH-Z8-Lzs" secondAttribute="leading" constant="16" id="f7o-QC-4I4"/>
+                            <constraint firstItem="NuH-Z8-Lzs" firstAttribute="trailing" secondItem="71o-8W-nth" secondAttribute="trailing" constant="16" id="fSg-wL-QcS"/>
+                            <constraint firstItem="iiQ-c2-uq7" firstAttribute="top" secondItem="RT4-mb-WZf" secondAttribute="bottom" constant="8" id="jps-tf-6V0"/>
                             <constraint firstItem="wQy-o0-jR2" firstAttribute="trailing" secondItem="NuH-Z8-Lzs" secondAttribute="trailing" id="pmN-mO-Gek"/>
+                            <constraint firstItem="NuH-Z8-Lzs" firstAttribute="trailing" secondItem="MnO-EH-8lQ" secondAttribute="trailing" constant="16" id="rVj-M1-4kT"/>
                             <constraint firstItem="RT4-mb-WZf" firstAttribute="leading" secondItem="NuH-Z8-Lzs" secondAttribute="leading" constant="16" id="va3-cc-SBt"/>
+                            <constraint firstItem="iiQ-c2-uq7" firstAttribute="leading" secondItem="NuH-Z8-Lzs" secondAttribute="leading" constant="16" id="zDh-Hg-qBe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NuH-Z8-Lzs"/>
                     </view>
@@ -145,6 +167,8 @@
                         <outlet property="artistNameLabel" destination="MnO-EH-8lQ" id="4ox-dH-QdP"/>
                         <outlet property="artworkImageView" destination="wQy-o0-jR2" id="4ea-VW-PAV"/>
                         <outlet property="collectionNameLabel" destination="RT4-mb-WZf" id="sY7-1E-iOF"/>
+                        <outlet property="copyrightLabel" destination="71o-8W-nth" id="ZSs-76-gd8"/>
+                        <outlet property="releaseDateLabel" destination="iiQ-c2-uq7" id="Gor-af-y6m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOl-ed-sK3" userLabel="First Responder" sceneMemberID="firstResponder"/>

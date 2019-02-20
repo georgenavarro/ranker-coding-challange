@@ -14,6 +14,8 @@ struct SearchResults: Codable {
 		let collectionName: String
 		let artworkUrl60: URL?
 		let artworkUrl100: URL?
+		let releaseDate: String?
+		let copyright: String?
 	}
 
 	let resultCount: Int
