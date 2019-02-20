@@ -10,13 +10,15 @@ import UIKit
 
 class SearchViewController: UITableViewController {
 	@IBOutlet private weak var searchBar: UISearchBar?
+
+	private var results: [SearchResults.Result] = []
 }
 
 extension SearchViewController {
 	private static let cellReuseIdentifire = "ResultCell"
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 0
+		return self.results.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,6 +28,15 @@ extension SearchViewController {
 		)
 
 		return cell
+	}
+}
+
+extension SearchViewController {
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(
+			at: indexPath,
+			animated: true
+		)
 	}
 }
 
@@ -51,9 +62,23 @@ extension SearchViewController {
 			return
 		}
 
+		let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: url) { [weak self] (data: Data?, response: URLResponse?, error: Error?) -> Void in
+			defer {
+				DispatchQueue.main.async {
+					self?.tableView.reloadData()
+				}
+			}
 
-		let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-			// TODO: parse data
+			let decoder: JSONDecoder = JSONDecoder()
+
+			if
+				let data: Data = data,
+				let searchResults: SearchResults = try? decoder.decode(SearchResults.self, from: data)
+			{
+				self?.results = searchResults.results
+			} else {
+				self?.results = []
+			}
 		}
 
 		dataTask.resume()
