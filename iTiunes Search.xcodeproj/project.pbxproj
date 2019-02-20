@@ -15,6 +15,7 @@
 		5E5EC707221CFE3F0061C0F1 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5EC706221CFE3F0061C0F1 /* Endpoint.swift */; };
 		5E5EC70D221D18240061C0F1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5EC70C221D18240061C0F1 /* Models.swift */; };
 		5E86DFDA221D1DD70027799B /* SearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86DFD9221D1DD70027799B /* SearchResultsCell.swift */; };
+		5E86DFDE221D2D2C0027799B /* UIImage+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86DFDD221D2D2B0027799B /* UIImage+Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5E5EC706221CFE3F0061C0F1 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		5E5EC70C221D18240061C0F1 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5E86DFD9221D1DD70027799B /* SearchResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCell.swift; sourceTree = "<group>"; };
+		5E86DFDD221D2D2B0027799B /* UIImage+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		5E5EC6F1221CF4A30061C0F1 /* iTiunes Search */ = {
 			isa = PBXGroup;
 			children = (
+				5E86DFDD221D2D2B0027799B /* UIImage+Utilities.swift */,
 				5E5EC6F2221CF4A30061C0F1 /* AppDelegate.swift */,
 				5E5EC706221CFE3F0061C0F1 /* Endpoint.swift */,
 				5E5EC70C221D18240061C0F1 /* Models.swift */,
@@ -148,6 +151,7 @@
 				5E86DFDA221D1DD70027799B /* SearchResultsCell.swift in Sources */,
 				5E5EC707221CFE3F0061C0F1 /* Endpoint.swift in Sources */,
 				5E5EC6F3221CF4A30061C0F1 /* AppDelegate.swift in Sources */,
+				5E86DFDE221D2D2C0027799B /* UIImage+Utilities.swift in Sources */,
 				5E5EC70D221D18240061C0F1 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

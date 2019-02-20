@@ -39,6 +39,7 @@ extension SearchViewController {
 
 		searchResultCell.artistNameLabel?.text = result?.artistName
 		searchResultCell.collectionNameLabel?.text = result?.collectionName
+		searchResultCell.displayImage(at: result?.artworkUrl60)
 
 		return searchResultCell
 	}

@@ -12,8 +12,8 @@ struct SearchResults: Codable {
 	struct Result: Codable {
 		let artistName: String
 		let collectionName: String
-		let artworkUrl60: String?
-		let artworkUrl100: String?
+		let artworkUrl60: URL?
+		let artworkUrl100: URL?
 	}
 
 	let resultCount: Int
