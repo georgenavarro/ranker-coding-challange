@@ -66,9 +66,9 @@ enum EntityType: String {
 
 enum Endpoint {
 	case search(term: String, media: MediaType, entity: EntityType?)
+}
 
-	static var base: String = "https://itunes.apple.com"
-
+extension Endpoint {
 	var path: String {
 		switch self {
 		case .search:
@@ -92,11 +92,47 @@ enum Endpoint {
 			return queryItems
 		}
 	}
+}
 
-	var url: URL? {
-		var urlComponents: URLComponents? = URLComponents(string: Endpoint.base)
+extension Endpoint {
+	func fetch<Type: Codable>(completionHandler: @escaping (Type?, URLResponse?, Error?) -> Void) {
+		var urlComponents: URLComponents? = URLComponents(string: "https://itunes.apple.com")
 		urlComponents?.path = self.path
 		urlComponents?.queryItems = self.queryItems
-		return urlComponents?.url
+
+		guard let url: URL = urlComponents?.url else {
+			completionHandler(
+				nil,
+				nil,
+				nil
+			)
+
+			return
+		}
+
+		let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+			var result: Type?
+			var finalError: Error? = error
+			let decoder: JSONDecoder = JSONDecoder()
+
+			if let data: Data = data {
+				do {
+					result = try decoder.decode(
+						Type.self,
+						from: data
+					)
+				} catch {
+					finalError = error
+				}
+			}
+
+			completionHandler(
+				result,
+				response,
+				finalError
+			)
+		}
+
+		dataTask.resume()
 	}
 }

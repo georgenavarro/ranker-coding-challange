@@ -85,29 +85,11 @@ extension SearchViewController {
 			entity: .album
 		)
 
-		guard let url: URL = endpoint.url else {
-			return
-		}
-
-		let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: url) { [weak self] (data: Data?, response: URLResponse?, error: Error?) -> Void in
-			defer {
-				DispatchQueue.main.async {
-					self?.tableView.reloadData()
-				}
-			}
-
-			let decoder: JSONDecoder = JSONDecoder()
-
-			if
-				let data: Data = data,
-				let searchResults: SearchResults = try? decoder.decode(SearchResults.self, from: data)
-			{
-				self?.results = searchResults.results
-			} else {
-				self?.results = []
+		endpoint.fetch { [weak self] (searchResults: SearchResults?, response: URLResponse?, error: Error?) -> Void in
+			DispatchQueue.main.async {
+				self?.results = searchResults?.results ?? []
+				self?.tableView.reloadData()
 			}
 		}
-
-		dataTask.resume()
 	}
 }
